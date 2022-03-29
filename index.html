@@ -8,6 +8,21 @@
     <script async src="https://cdn.jsdelivr.net/npm/dompurify@2.3.5/dist/purify.min.js"></script>
   </head>
   <body>
+        <script>
+    var colors = ["red", "blue", "green", "black"];
+    var colorIndex = 0;
+    function changeColor() {
+        var col = document.getElementById("body");
+        if( colorIndex >= colors.length ) {
+            colorIndex = 0;
+        }
+        col.style.backgroundColor = colors[colorIndex];
+        colorIndex++;
+    }
+  </script>
+    <body id='body'>
+    <button onclick="changeColor();">Change color</button>
+  </body>
     <div class="pageContainer">
       <div class="headline">
         <img src="logo.svg" alt="Logo" width="200px" />
@@ -65,21 +80,6 @@
         >Statsig's Status Page Template</a
       >.
     </footer>
-    <script>
-    var colors = ["red", "blue", "green", "black"];
-    var colorIndex = 0;
-    function changeColor() {
-        var col = document.getElementById("body");
-        if( colorIndex >= colors.length ) {
-            colorIndex = 0;
-        }
-        col.style.backgroundColor = colors[colorIndex];
-        colorIndex++;
-    }
-  </script>
-    <body id='body'>
-    <button onclick="changeColor();">Change color</button>
-  </body>
   <script>
     genAllReports();
     window.addEventListener('load', () => {
